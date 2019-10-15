@@ -1,0 +1,15 @@
+{
+  "name": "encdecryption",
+  "version": "1.0.0",
+  "description": "File Encryption Decryption Interface",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodeman start"
+  },
+  "author": "Attendance",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^1.19.3"
+  }
+}
