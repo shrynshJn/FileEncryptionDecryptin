@@ -1,5 +1,4 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const app = express();
 const fileUpload = require('express-fileupload');
 const port = 3000;
@@ -14,7 +13,7 @@ app.post('/encryptfile', function(req, res){
         return res.status(400).send("No files were uploaded");
     }
     let file = req.files.file;
-    if (!file.name.endsWith('.css')) {
+    if (!file.name.endsWith('.txt')) {
         return res.status(400).send("File should be of text format");
     }
 
@@ -78,6 +77,10 @@ app.get('/decrypted', function(req, res) {
 app.get('/download', function(req, res){
     res.download(req.query.path);
 });
+
+app.get('/back.jpg', function(req, res) {
+    res.sendFile(__dirname + "/html/back.jpg");
+})
 app.listen(port, function() {
     console.log('File Encryption Decryption Interface');
 });
